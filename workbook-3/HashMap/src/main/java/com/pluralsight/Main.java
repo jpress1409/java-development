@@ -36,7 +36,6 @@ if(){
                 int id = Integer.parseInt(tokens[0]);
                 String name = tokens[1];
                 Double price = Double.parseDouble(tokens[2]);
-                inventoryMap.
             }
 
 
