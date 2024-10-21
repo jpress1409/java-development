@@ -28,18 +28,29 @@ public class Employee {
     public double getRegularHours() {
         if(hoursWorked > 40){
         return 40;
-        }else{
+        }else {
             return hoursWorked;
         }
     }
 
     public double getOvertimeHours() {
-        if (hoursWorked > 40) {
-            return hoursWorked - 40;
-        }
-        else{
+        if (hoursWorked < 40) {
             return 0;
         }
+        else{
+            return hoursWorked - 40;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "employeeID='" + employeeID + '\'' +
+                ", name='" + name + '\'' +
+                ", department='" + department + '\'' +
+                ", payRate=" + payRate +
+                ", hoursWorked=" + hoursWorked +
+                '}';
     }
 }
 
