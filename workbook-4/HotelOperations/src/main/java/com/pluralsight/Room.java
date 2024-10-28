@@ -1,5 +1,10 @@
 package com.pluralsight;
 
+import org.junit.Test;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 public class Room {
     private int beds;
     private double price;
@@ -11,6 +16,20 @@ public class Room {
         this.price = price;
         this.occupied = false;
         this.dirty = false;
+    }
+    public void getCheckIn(){
+       if(isAvailable()) {
+           dirty = true;
+           occupied = true;
+       }
+   }
+    public Boolean getCheckOut(){
+        return !isOccupied() && !isDirty();
+    }
+    public void cleanRoom(){
+            if(!isOccupied()){
+                isDirty();
+            }
     }
 
     public int getBeds() {
@@ -26,9 +45,10 @@ public class Room {
     }
 
     public boolean isDirty() {
-        return dirty;
+        return false;
     }
     public Boolean isAvailable(){
         return !isDirty() && !isOccupied();
     }
+
 }
