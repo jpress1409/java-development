@@ -11,6 +11,11 @@ public class Vehicle extends Asset {
     public Vehicle() {
     }
 
+    @Override
+    public double getVale() {
+        return 0;
+    }
+
     public String getMakeModel() {
         return makeModel;
     }

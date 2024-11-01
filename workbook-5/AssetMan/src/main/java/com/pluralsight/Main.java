@@ -10,9 +10,7 @@ public class Main {
         Vehicle truck = new Vehicle();
         ArrayList<Asset>assets = new ArrayList<>();
 
-        for(Vehicle truck : assets){
 
-        }
 
     }
 }

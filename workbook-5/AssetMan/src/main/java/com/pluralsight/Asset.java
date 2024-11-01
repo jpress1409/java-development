@@ -9,9 +9,8 @@ public abstract class Asset {
 
     }
 
-    public double getVale(){
-        return originalCost;
-    }
+    public abstract double getVale();
+
     public String getDescription() {
         return description;
     }

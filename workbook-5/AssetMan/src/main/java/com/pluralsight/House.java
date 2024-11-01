@@ -9,6 +9,11 @@ public class House extends Asset {
     public House() {
     }
 
+    @Override
+    public double getVale() {
+        return 0;
+    }
+
     public String getAddress() {
         return address;
     }
