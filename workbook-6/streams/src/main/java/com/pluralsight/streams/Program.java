@@ -1,10 +1,35 @@
 package com.pluralsight.streams;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Program {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        ArrayList<Person> people =createPeopleList();
+
+
+        // Search By Name
+        System.out.println("Who would you like to search?");
+        String name = scan.nextLine();
+
+        for (Person person : people) {
+            if(person.getFirstName().equalsIgnoreCase(name) || person.getLastName().equalsIgnoreCase(name)) {
+                System.out.println(person);
+            }
+        }
+
+        // Average age of list
+        System.out.println("The average age is " + averageAge(people));
+
+        // Find Oldest
+        System.out.println("This oldest person is " +  oldestPerson(people));
+
+        // Find Youngest
+        System.out.println("This youngest person is " +  youngestPerson(people));
+
+    }
+    private static ArrayList<Person> createPeopleList(){
         ArrayList<Person> people = new ArrayList<>();
 
         people.add(new Person("John", "Doe", 28));
@@ -18,25 +43,16 @@ public class Program {
         people.add(new Person("Frank", "Taylor", 33));
         people.add(new Person("Grace", "Anderson", 29));
 
-        // Search By Name
-        System.out.println("Who would you like to search?");
-        String name = scan.nextLine();
-
-        for (Person person : people) {
-            if(person.getFirstName().equalsIgnoreCase(name) || person.getLastName().equalsIgnoreCase(name)) {
-                System.out.println(person);
-            }
-        }
-
-        // Average age of list
+        return people;
+    }
+    private static double averageAge(ArrayList<Person> people){
         double totalAge = 0;
         for (Person person : people){
             totalAge += person.getAge();
         }
-        double averageAge = totalAge / people.size();
-        System.out.println("The average age is " + averageAge);
-
-        // Find Oldest
+        return totalAge / people.size();
+    }
+    private static Person oldestPerson(ArrayList<Person> people){
         Person oldestPerson = people.get(0);
 
         for (Person person : people){
@@ -44,10 +60,9 @@ public class Program {
                 oldestPerson = person;
             }
         }
-
-        System.out.println("This oldest person is " +  oldestPerson);
-
-        // Find Youngest
+        return oldestPerson;
+    }
+    private static Person youngestPerson(ArrayList<Person> people){
         Person youngestPerson = people.get(0);
 
         for (Person person : people){
@@ -56,6 +71,6 @@ public class Program {
             }
         }
 
-        System.out.println("This youngest person is " +  youngestPerson);
+        return youngestPerson;
     }
 }
