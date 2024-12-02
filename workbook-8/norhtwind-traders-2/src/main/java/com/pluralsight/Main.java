@@ -15,9 +15,7 @@ public class Main {
         System.out.printf("%-5s %-35s %-10s %-10s%n", "id", "name", "price", "stock");
         System.out.println("---------------------------------------------------------");
 
-       try(Connection connection = DriverManager.getConnection(
-               "jdbc:mysql://localhost:3306/northwind", username, password
-       ); PreparedStatement statement = connection.prepareStatement(query)){
+       try(Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/northwind", username, password); PreparedStatement statement = connection.prepareStatement(query)){
 
            ResultSet results = statement.executeQuery();
 
