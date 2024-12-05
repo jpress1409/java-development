@@ -90,7 +90,7 @@ public class DataManager {
             while (iterator.hasNext()) {
                 Shipper shipper = iterator.next();
                 if (shipper.getShipperId() == id) {
-                    iterator.remove(); 
+                    iterator.remove();
                     System.out.println("Shipper removed from local list.");
                 }
             }
