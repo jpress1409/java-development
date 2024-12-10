@@ -1,12 +1,13 @@
 package com.pluralsight.northwindapi.controllers;
 
-import org.springframework.web.bind.annotation.RestController;
+import com.pluralsight.northwindapi.models.Product;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class HomeController {
 
-    @RequestMapping(path = "/calculator", method = RequestMethod.GET)
-    public String index(@RequestParam int num1, @RequestParam int num2){
-        return "Hello Potato";
+    @RequestMapping(path = "/", method = RequestMethod.GET)
+    public String index(@RequestParam(defaultValue = "World") String country) {
+        return "Hello " + country + "!";
     }
 }
