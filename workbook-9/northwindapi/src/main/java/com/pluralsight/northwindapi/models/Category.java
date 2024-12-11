@@ -5,10 +5,9 @@ public class Category {
     private int categoryId;
     private String description;
 
-    public Category(String name, int categoryId, String description) {
+    public Category(String name, int categoryId) {
         this.name = name;
         this.categoryId = categoryId;
-        this.description = description;
     }
 
     public String getName() {

@@ -6,16 +6,16 @@ public class Product {
     private int categoryId;
     private double unitPrice;
 
-    public Product(String productName, int categoryId, double unitPrice) {
+    public Product(int productId, String productName, int categoryId, double unitPrice) {
         this.productName = productName;
         this.categoryId = categoryId;
         this.unitPrice = unitPrice;
+        this.productId = productId;
     }
 
-    public Product(int productId, String productName, int categoryId, double unitPrice) {
+    public Product(int productId, String productName, double unitPrice) {
         this.productId = productId;
         this.productName = productName;
-        this.categoryId = categoryId;
         this.unitPrice = unitPrice;
     }
 
